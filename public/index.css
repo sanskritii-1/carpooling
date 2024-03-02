@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.container{
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.sidebar{
+    background-color: aqua;
+    width: 40%;
+    height: 100vh;
+}
+
+.map{
+    background-color: blueviolet;
+    width: 60%;
+    height: 100vh;
+    /* max-height: 100vh; */
+    /* flex:1; */
+}
+
+@media screen and (max-width:1000px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .map{
+        height: 50vh;
+        width: 100%;
+    }
+    .sidebar{
+        width: 100%;
+    }
+}
+/*
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.map {
+    flex: 1; Take remaining vertical space
+}
+
+.sidebar {
+    background-color: lightgray;
+    padding: 10px;
+}
+
+Media query for small screens
+@media screen and (max-width: 600px) {
+    .container {
+        flex-direction: column-reverse; Reverse column order
+    }
+    
+    .sidebar {
+        order: 1; Move sidebar below content
+    }
+}
+
+*/
+
