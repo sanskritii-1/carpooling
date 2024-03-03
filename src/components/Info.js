@@ -1,4 +1,6 @@
 import React from "react";
+import Passengers from "./Passengers"
+import Contact from "./Contact";
 
 export default function Info() {
   return (
@@ -9,27 +11,13 @@ export default function Info() {
         </h2>
       </div>
       <div className="form-container">
-        <div className="pickup-location">
-          <input
-            type="text"
-            placeholder="Add a pickup location"
-            // value={pickupLocation}
-            // onChange={(e) => setPickupLocation(e.target.value)}
-          />
+        <div className="driver">
+          <Passengers class="driver-info" name="Driver" img="images/user.png" rating="4.5"/>
+          <Contact/>
         </div>
-        <br />
-
-        <div className="drop-location">
-          <input
-            type="text"
-            placeholder="Enter Your Destination"
-            // value={dropLocation}
-            // onChange={(e) => setDropLocation(e.target.value)}
-          />
-        </div>
-        <br />
-
-        {/* <button onClick={findRide}>Ride Now</button> */}
+        <Passengers class="passenger" name="Sara111111111111111111111111111111111" img="images/user.png" rating="4.5"/>
+        <Passengers class="passenger" name="Sanskriti Negi" img="images/user.png" rating="4.5"/>
+        <Passengers class="passenger" name="Sara2" img="images/user.png" rating="4.5"/>
       </div>
       <br />
     </div>

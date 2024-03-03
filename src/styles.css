@@ -1,5 +1,7 @@
 .App {
-  font-family: sans-serif;
+  /* font-family: "Lucida Console", "Courier New", monospace; */
+  /* font-family: "Madimi One", sans-serif; */
+  font-family: "Permanent Marker", cursive;
   text-align: center;
 }
 
@@ -36,16 +38,19 @@
 .form-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   width: 100%;
   max-width: 300px;
-  padding: 2rem;
+  padding: 10px;
   box-sizing: border-box;
   background-color: white;
   border-radius: 10px;
   /* box-shadow: 0 0 10px rgba(19, 137, 96, 0.8); */
-  margin-right: 2rem;
+  /* margin-right: 2rem; */
+  max-height: 20rem;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .pickup-location,
@@ -93,19 +98,16 @@
   z-index: 9;
   /* box-shadow: 2px 0px 50px 10px rgb(188, 188, 188); */
   /* border: 100px white; */
-  color: white;
+  color: black;
 
-
-
-
-    /* top: 50%; */
-    /* left: 50%; */
-    /* transform: translate(-50%, -50%); */
-    background-color: rgba(134, 246, 222, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    right: 0;
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
+  background-color: rgba(160, 237, 223, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  right: 0;
 }
 
 button{
@@ -134,7 +136,7 @@ button{
 .item{
   /* border: 1px ; */
   margin: 10px;
-  background-color: rgb(163, 244, 202);
+  background-color: rgb(84, 232, 183);
   border-radius: 20px;
   padding: 10px;
   cursor: pointer;
@@ -144,4 +146,66 @@ button{
   /* position:fixed;
   z-index: 1; */
   filter: blur(2px);
+}
+
+.profile{
+  border-radius: 20px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+.passenger{
+  background-color:aquamarine;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px 0;
+  border-radius: 10px;
+  margin: 3px 0;
+}
+
+.driver{
+  background-color: aqua;
+
+  border-radius: 10px;
+  margin: 0px 0 5px 0;
+}
+
+.driver-info{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px 0;
+}
+
+.contact{
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 10px;
+  padding-top: 6px;
+}
+.contact img{
+  width: 25px;
+  /* border-radius: 10px; */
+  cursor: pointer;
+}
+
+.contact input{
+  width: 6rem;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.msg{
+  display: flex;
+  justify-content: space-between;
+}
+
+.message{
+  margin-right: 8px;
+}
+
+.rider-name{
+  background-color: aliceblue;
+  max-width: 40%;
+  /* overflow: hidden; */
+  word-wrap: break-word;
 }
