@@ -1,83 +1,147 @@
 .App {
-    font-family: sans-serif;
-    text-align: center;
-  }
-  
-  .leaflet-container {
-    width: 100%;
-    height: 100vh;
-  }
-  
-  /* .box-with-circular-ends {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+
+/* .box-with-circular-ends {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  z-index: 1;
+} */
+
+.box-with-circular-ends {
+  position: fixed;
+  /* top: 50%; */
+  /* left: auto; */
+  /* transform: translate(-50%, -50%); */
+  margin: 10rem 5rem;
+  width: 300px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  padding: 2rem;
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 10px;
+  /* box-shadow: 0 0 10px rgba(19, 137, 96, 0.8); */
+  margin-right: 2rem;
+}
+
+.pickup-location,
+.drop-location {
+  margin-bottom: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.pickup-location input,
+.drop-location input {
+  padding: 0.5rem;
+  width: 100%;
+}
+
+/* .box-with-circular-ends {
+  position: fixed;
+  height: 30vh;
+  width: 30vw;
+  transform: translate(-50%, -50%);
+  top: 10px;
+  left: 10px;
+  background-color: aqua;
+} */
+
+.map-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 200vh; 
+  z-index: -1; 
+  margin: 0;
+  padding: 0;
+}
+
+
+.side-bar{
+  position: fixed;
+  width: 15rem;
+  height: 100vh;
+  border-radius: 10px;
+  /* margin-top: 80px; */
+  /* margin-bottom: 20px; */
+  z-index: 9;
+  /* box-shadow: 2px 0px 50px 10px rgb(188, 188, 188); */
+  /* border: 100px white; */
+  color: white;
+
+
+
+
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    background-color: rgba(134, 246, 222, 0.8);
     padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 20px;
-    z-index: 1;
-  } */
-  
-  .box-with-circular-ends {
-    position: fixed;
-    top: 50%;
-    left: 200px;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 20px;
-    z-index: 1;
-  }
-  
-  .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 300px;
-    padding: 2rem;
-    box-sizing: border-box;
-    background-color: white;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(19, 137, 96, 0.8);
-    margin-right: 2rem;
-  }
-  
-  .pickup-location,
-  .drop-location {
-    margin-bottom: 1rem;
-    width: 100%;
-    max-width: 300px;
-  }
-  
-  .pickup-location input,
-  .drop-location input {
-    padding: 0.5rem;
-    width: 100%;
-  }
-  
-  /* .box-with-circular-ends {
-    position: fixed;
-    height: 30vh;
-    width: 30vw;
-    transform: translate(-50%, -50%);
-    top: 10px;
-    left: 10px;
-    background-color: aqua;
-  } */
-  
-  .map-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw; 
-    height: 200vh; 
-    z-index: 0; 
-    margin: 0;
-    padding: 0;
-  }
-  
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    right: 0;
+}
+
+button{
+  position: fixed;
+  /* background-color: white; */
+  z-index: 10;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 10px;
+  /* left: auto; */
+  right:0px;
+  margin-right: 10px;
+}
+
+.side-button{
+  height: 30px;
+  width: 30px;
+}
+
+.item-img{
+  height: 30px;
+  width: 30px;
+  margin-top: 10px;
+}
+
+.item{
+  /* border: 1px ; */
+  margin: 10px;
+  background-color: rgb(163, 244, 202);
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.blur-background{
+  /* position:fixed;
+  z-index: 1; */
+  filter: blur(2px);
+}

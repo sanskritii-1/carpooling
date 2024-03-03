@@ -1,37 +1,18 @@
 import React from "react";
 
-export default function Info() {
-  return (
-    <div className="box-with-circular-ends">
-      <div className="header">
-        <h2>
-          <strong>Where can we Pickup?</strong>
-        </h2>
-      </div>
-      <div className="form-container">
-        <div className="pickup-location">
-          <input
-            type="text"
-            placeholder="Add a pickup location"
-            // value={pickupLocation}
-            // onChange={(e) => setPickupLocation(e.target.value)}
-          />
+export default function Sidebar(props){
+    return (
+        <div className="side-bar" style={{display:(props.show)?"block":"none"}}>
+        {/* // <div className="side-bar" style={{display:"block"}}> */}
+            <h1>OPTIONS</h1>
+            <div className="item">
+                <img src="images/book_ride.png" className="item-img"></img>
+                <p className="content">Book Ride</p>
+            </div>
+            <div className="item">
+                <img src="images/history.png" className="item-img"></img>
+                <p className="content">Past Rides</p>
+            </div>
         </div>
-        <br />
-
-        <div className="drop-location">
-          <input
-            type="text"
-            placeholder="Enter Your Destination"
-            // value={dropLocation}
-            // onChange={(e) => setDropLocation(e.target.value)}
-          />
-        </div>
-        <br />
-
-        {/* <button onClick={findRide}>Ride Now</button> */}
-      </div>
-      <br />
-    </div>
-  );
+    )
 }
