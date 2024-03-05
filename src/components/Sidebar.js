@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+
 
 export default function Sidebar(props){
     return (
@@ -13,6 +15,12 @@ export default function Sidebar(props){
                 <img src="images/history.png" className="item-img"></img>
                 <p className="content">Past Rides</p>
             </div>
+
+            {/* <Router>
+                <Routes>
+                    <Route path="/history" element={}
+                </Routes>
+            </Router> */}
         </div>
     )
 }
