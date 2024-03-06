@@ -222,3 +222,8 @@ button{
 .payment-method{
   color: rgba(103, 109, 114, 0.662);
 }
+
+/* to not display the instructions of where to go */
+.leaflet-top{
+  display: none;
+}
