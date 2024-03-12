@@ -5,7 +5,7 @@ export default function Passengers(props){
         <div className={props.class}>
             <img src={props.img} className="profile"></img>
             <span className="rider-name">{props.name}</span>
-            <span>{props.rating}</span>
+            <span>{props.rating}⭐</span>
         </div>
     )
 }

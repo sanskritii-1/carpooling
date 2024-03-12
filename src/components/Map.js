@@ -2,11 +2,11 @@ import React,{useState, useEffect} from "react";
 import L,{Icon} from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import LocationMarker from "./Location";
+import LocationMarker from "./UserLocation";
 import RoutingMachine from "./Route";
 
 
-export default function Map() {
+export default function Map(props) {
 
   const [center, setCenter] = useState(null)
   useEffect(()=>{
@@ -19,10 +19,7 @@ export default function Map() {
     })
   },[])
 
-  const dropoff = new Icon({
-    iconUrl: "images/destination_pin.png",
-    iconSize: [28,28]
-  })
+  console.log("driver: ",props.driverLocation)  
 
   const pickup = new Icon({
     iconUrl: "images/pickup_location.png",
@@ -34,6 +31,12 @@ export default function Map() {
     iconSize: [18,18]
   })
 
+  const driver = new Icon({
+    iconUrl: "images/driver_pin.png",
+    iconSize: [28,28]
+  })
+
+
   if(center)
   return (
     <div className="map-container">
@@ -44,14 +47,16 @@ export default function Map() {
         />
         <Marker position={center} icon={pickup}>
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            Pickup
           </Popup>
         </Marker>
-        <Marker position={[0,0]} icon={dropoff}>
-          <Popup>Destination</Popup>
+        <Marker position={props.driverLocation} icon={driver}>
+          <Popup>
+            Driver Location
+          </Popup>
         </Marker>
         <LocationMarker icon={user}/>
-        <RoutingMachine start={center} end="[0,0]"/>
+        <RoutingMachine start={center} end={props.driverLocation}/>
 
       </MapContainer>
     </div>

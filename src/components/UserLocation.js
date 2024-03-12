@@ -8,12 +8,12 @@ export default function LocationMarker(props) {
     console.log(navigator.geolocation.getCurrentPosition(()=>{
 
     }))
-    // useEffect hook to set up geolocation tracking
+
     useEffect(() => {
       const watchId = navigator.geolocation.watchPosition(
         (position) => {
           const { latitude, longitude } = position.coords;
-          setPosition([latitude, longitude]); // Update marker position
+          setPosition([latitude, longitude]); 
         //   map.flyTo([latitude, longitude]);
         },
         (error) => {
@@ -22,9 +22,9 @@ export default function LocationMarker(props) {
       );
   
       return () => {
-        navigator.geolocation.clearWatch(watchId); // Clean up watchPosition
+        navigator.geolocation.clearWatch(watchId); 
       };
-    }, []); // Run effect only once when component mounts
+    }, []); 
   
     return position === null ? null : (
       <Marker position={position} icon={props.icon}>

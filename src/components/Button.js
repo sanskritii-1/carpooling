@@ -10,8 +10,8 @@ export default function Button(){
 
     return (
         <div className="side">
-            <button onClick={toggleSideBar}>
-                <img className="side-button" src="images/sidebar_button.png" />
+            <button onClick={toggleSideBar} className="side-button">
+                <img className="side-button-img" src="images/sidebar_button.png" />
             </button>
             <Sidebar show={showSideBar}/>
         </div>
