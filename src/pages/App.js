@@ -16,6 +16,7 @@ import LocationMarker from "../components/UserLocation";
 import io from "socket.io-client"
 import { Link } from "react-router-dom";
 import Confirm_page from "./Confirm_page"
+import Waiting from "../components/waitingRide";
 
 const socket = io.connect("http://localhost:3001");
 
@@ -39,6 +40,7 @@ function App() {
   const [selectedRideOption, setSelectedRideOption] = useState(null);
   const [showRideOptions, setShowRideOptions] = useState(false);
   const [confirmRide, setConfirmRide] = useState(false);
+  const [WaitingRide, setWatingRide] = useState(false);
 
   const [center, setCenter] = useState(null)
   useEffect(()=>{
@@ -119,6 +121,8 @@ function App() {
   const handleConfirmRide = () => {
     // No need to set confirmRide again
     setShowRideOptions(false); // Hide ride options container
+    setWatingRide(true);
+    setConfirmRide(false);
     socket.emit("send_data",{
         name: "User",
         rating: "4.7",
@@ -163,19 +167,20 @@ function App() {
           onBackToSelection={handleBackToSelection}
         />
       )}
-      {!showRideOptions && !confirmRide && (
+      {!showRideOptions && !confirmRide && !WaitingRide && (
         <PickupForm
-          pickupLocation={pickupLocation}
-          dropLocation={dropLocation}
-          date={date}
-          seats={seats}
-          onPickupLocationChange={setPickupLocation}
-          onDropLocationChange={setDropLocation}
-          onDateChange={setDate}
-          onSeatsChange={setSeats}
-          onFindRide={findRide}
+        pickupLocation={pickupLocation}
+        dropLocation={dropLocation}
+        date={date}
+        seats={seats}
+        onPickupLocationChange={setPickupLocation}
+        onDropLocationChange={setDropLocation}
+        onDateChange={setDate}
+        onSeatsChange={setSeats}
+        onFindRide={findRide}
         />
-      )}
+        )}
+      {WaitingRide && (<Waiting/>)}
 
       <div className="map-container">
         <MapContainer center={center} zoom={19} scrollWheelZoom={true}>
